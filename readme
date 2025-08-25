@@ -1,0 +1,39 @@
+# Backend - Spring Boot API
+
+Este proyecto es el backend de la aplicación, desarrollado en **Spring Boot**, que se conecta a una base de datos **Oracle**.
+
+## Requisitos
+
+- Java 17 o superior
+- Maven
+- Oracle Database (XE o estándar)
+- IDE recomendado: IntelliJ IDEA, Eclipse o VS Code
+
+## Configuración de la base de datos
+
+1. Crear una base de datos en Oracle.
+2. Crear un usuario y asignar los privilegios necesarios.
+3. Configurar las propiedades en `application.properties` o `application.yml`:
+
+```properties
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.username=TU_USUARIO
+spring.datasource.password=TU_CONTRASEÑA
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+spring.jpa.hibernate.ddl-auto=update
+
+_Instalación y ejecución_
+
+Clonar el repositorio:
+git clone <URL_DEL_REPOSITORIO>
+cd backend
+
+Construir el proyecto:
+mvn clean install
+
+Ejecutar la aplicación:
+mvn spring-boot:run
+
+La API estará disponible en: http://localhost:8080
